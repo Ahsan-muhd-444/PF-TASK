@@ -1,45 +1,48 @@
-#include<iostream>
-#include<fstream>
-#include<conio.h>
+#include <iostream>
 using namespace std;
-void fun()
-{
-	fstream file("LibraryManagment.txt", ios :: app);
-	file <<1<<"  "<<"PROGRAMMING"<<"  "<<"AHSAN"<<"  "<<36501;
-	file.close();
-}
-
-
 int main()
 {
-	
-	
-	fun();
-	
-	
-	system("cls");
-	fstream file("LibraryManagment.txt" ,ios::in);        //A FILE OF LIBRARY MANAGEMENT SYSTEM SO THAT I WILL AUTOMATICALLY DISPLAY DATA OF THE FILE
-	string book_title, author_name,line;
-	long long ISBN;
-	int book_num;
-	
-	cout<<"\n\t\t\t---------------------------------------------------------------"<<endl;
-	cout<<"\n\t\t\tBOOKS FOUND IN THE RECORD"<<endl;
-	cout<<"\n\t\t\t---------------------------------------------------------------"<<endl;
-	cout<<endl;
-	
-		
-	cout<<"------------------------------------------------------------------------------------------------------------------------"<<endl;
-	cout << "SEQ                 BOOK TITLE                  AUTHOR NAME                  ISBN NUMBER"<<endl;
-    cout<<"------------------------------------------------------------------------------------------------------------------------"<<endl;
-	while(file >> book_num >> book_title >> author_name >> ISBN)
-	{	
-		
-        cout << book_num <<"."<< "       " << book_title << "       " << author_name << "        " << ISBN << endl;
-	}
-	
-	file.close();
-
+	int input,count =0;
+	int matrix[4][3]={{1,2,3}, {4,5,6}, {7,8,9},{10,11,12}};
+	cout<<"PLEASE ENTER THE NUMBER YOU WANT TO SEARCH : ";
+	cin >> input;
+//	for(int i=0 ; i<4; i++)
+//   {
+//   	for(int j=0; j<3; j++)
+//   	{
+//   		cout<<"Please enter the Value at 2D array at "<<i<<" row and "<<j<<" column is = ";
+//   		cin>>matrix[i][j];
+//   		
+//	}
+//
+//  }
+//   for(int i=0 ; i<4; i++)
+//   {
+//   	for(int j=0; j<3; j++)
+//   	{
+//   		cout<<"Value of 2D array at "<<i<<" row and "<<j<<" column is = "<<matrix[i][j]<<endl;
+//   		
+//   		
+//	}
+//cout<<endl;
+//  }
+  for(int i=0; i<4; i++)
+  {
+  	for(int j=0; j<3; j++)
+  	{
+  		if (input == matrix[i][j])
+  		{
+  			count=1;
+  			cout<<"NUMBER FIND AT "<<i<<" ROW AND "<<j<<" COLUMN OF 2D ARRAY"<<endl;
+  			cout<<"your number is = "<<matrix[i][j]<<endl;
+  			break;
+		  }
+	  }
+  }
+  if(count == 0)
+  {
+  	cout<<"SORRY NO SUCH NUMBER IS FOUND"<<endl;
+  }
 
 return 0;
 }
